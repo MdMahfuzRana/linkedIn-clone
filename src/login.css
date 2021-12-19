@@ -1,0 +1,30 @@
+.signIn__container__div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: red; */
+}
+.signIn__container__div>h1{
+    font-size: 2.4rem;
+    color: rgb(184, 147, 92);
+    margin-bottom: 10px;
+}
+.image__container__forSignIn__logo{
+    height: 80px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+}
+.image__container>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

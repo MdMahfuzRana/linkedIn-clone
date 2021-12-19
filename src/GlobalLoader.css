@@ -1,0 +1,78 @@
+.global__loader__main__container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f8f5ea;
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.loader__cotainer{
+    margin-top: 10%;
+    max-height: fit-content;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.progress__bar__logo__container{
+    height: 60px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress__bar__logo__container>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.progress__bar__container{
+    height: 4px;
+    width: 100%;
+    background-color: lightgray;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+.progress__bar__container>div{
+    height: 100%;
+    width: 40%;
+    background-color: rgb(88, 123, 238);
+    border-radius: 2px;
+    animation: progress 500ms ease infinite;
+}
+@keyframes progress {
+    0%{
+        position: relative;
+        left: 10px;
+    }
+    10%{
+        position: relative;
+        left: 20px;
+    }
+    20%{
+        position: relative;
+        left: 30px;
+    }
+    30%{
+        position: relative;
+        left: 70px;
+    }
+    40%{
+        position: relative;
+        left: 100px;
+    }
+    50%{
+        position: relative;
+        left: 130px;
+    }
+    70%{
+        position: relative;
+        left: 135px;
+    }
+    100%{
+        position: relative;
+        left: 45px;
+    }
+}

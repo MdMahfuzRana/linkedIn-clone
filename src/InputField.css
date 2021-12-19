@@ -1,0 +1,126 @@
+.inputField__main__container{
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    z-index: 50;
+}
+
+
+.dynamic__textInput__field__container{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    padding: 15px;
+}
+.text__container{
+    /* padding: 5px; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text__container>div{
+    height: 40px;
+    width: 95%;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid gray;
+    font-size: .9rem;
+    padding: 10px;
+
+}
+.text__container>div>input{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    /* background-color: lightgray; */
+    border-radius: 30px;
+    /* border: 1px solid gray; */
+    padding: 5px;
+}
+
+
+.dynamic__fileInput__field__container{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.dynamic__fileInput__field__container>div{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(70, 99, 226);
+}
+.input__image__container{
+    height: 20px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input__image__container>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    backdrop-filter: blur(5px);
+}
+.dynamic__fileInput__field__container>div:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.dynamic__fileInput__field__container>div>p{
+    margin-left: 8px;
+}
+/* @media screen and (max-width: 100px) {
+
+    .input__image__container{
+        display: none;
+    }
+
+} */
+@media screen and (max-width: 550px) {
+    .dynamic__fileInput__field__container>div>p{
+       display: none;
+    }
+    .inputField__main__container{
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        z-index: 50;
+    }
+    
+}
+
+
+
+
+
+
+

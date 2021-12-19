@@ -1,0 +1,108 @@
+.signUp__main__contianer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+.signUP__logo__container{
+    height: 100px;
+    max-width: fit-content;
+    margin-top: 3%;
+}
+.signUP__logo__container>div{
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.signUP__logo__container>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.signUP_register__container{
+    min-height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.signUP_register__container>div{
+    margin: 10px;
+}
+.agreement__container{
+    text-align: center;
+}
+.signUP__email__container{
+    height: 32px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+.signUP__email__container>input{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    padding:10px;
+    font-size: 1.1rem;
+}
+.bluer__agreeeand__join{
+    height: 45px;
+    width: 350px;
+    background-color: rgb(66, 66, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 30px;
+}
+.bluer__agreeeand__join:hover{
+    cursor: pointer;
+    background-color: rgb(41, 41, 182);
+}
+.border_room{
+    min-height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.border__signIP{
+    height: 1px;
+    width: 150px;
+    background-color: gray;
+}
+.bluer__agreeeand__join__with__google{
+    height: 45px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 30px;
+
+}
+.lgoo___container__signIN{
+    height: 25px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.lgoo___container__signIN>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

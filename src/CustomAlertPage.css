@@ -1,0 +1,61 @@
+.CustomAlertPage__container{
+    position:fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:auto;
+    /* overflow: hidden; */
+}
+.displayNone{
+    display: none;
+
+}
+.alert__container{
+    margin-top: 70px;
+    height: 50px;
+    min-width: 250px;
+    background-color: rgb(230, 224, 224);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    animation: danching .5s linear ;
+}
+.alert__container>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes danching {
+    0%{
+      opacity: 0;  
+    left: 550px;
+    }
+    80%{
+        left:100px;
+    }
+    100%{
+        left: 0px;
+        opacity: 1;
+    }
+}
+.hover{
+    padding: 3px;
+}
+.hover:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    padding: 3px;
+    color: red;
+}

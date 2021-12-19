@@ -1,0 +1,248 @@
+.post__container{
+    min-height: 20px;
+    width: 100%;
+    /* background-color: red; */
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 20px;
+}
+.post__header{
+    min-height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    /* background-color: red; */
+}
+.post__header__Avatar__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+}
+
+.post__header__Avatar__container>div{
+    margin: 5px;
+}
+.post__header__desc__container{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    /* background-color: red; */
+}
+.post__desc{
+    min-height: 5px;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    /* background-color: red; */
+}
+.three__dots__container{
+    padding: 10px;
+}
+.post__image__container{
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post__image__container>div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post__image__container>div>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.post__foooter{
+    min-height: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.react__result__field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 10px;
+    width: 100%;
+    font-size: .8rem;
+}
+.border{
+    height: 1px;
+    width: 95%;
+    background-color: lightgray;
+}
+.react__event__field{
+    min-height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.react{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.react>p{
+    margin-left: 5px;
+}
+.react:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    color: gray;
+}
+.hover__div{
+    /* top:-10px;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    background-color: red;
+    position:fixed;
+    height: 50px;
+    width: 150px;
+    z-index: 1000;
+}
+
+.user__comment__section{
+    min-height: fit-content;
+    width: 100%;
+}
+.comment__div{
+    padding: 10px;
+    text-align: left;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.comment__div>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    border-radius: 5px;
+}
+.comment__div>div>p{
+    padding:8px;
+    background-color: lightgray;
+}
+.comment__div>div>a{
+    font-size: small;
+    padding-left: 8px;
+}
+.comment__write__section__container{
+    height:35px;
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+     display:flex;
+     justify-content:space-between;
+     align-items:center
+}
+.dispalay__none__effect{
+    display: none;
+    animation: togggle 200ms linear;
+}
+.input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+}
+@keyframes togggle {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 650px) {
+
+    .react__event__field>div>p{
+        display: none;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    .react{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .react__event__field>div>p{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
