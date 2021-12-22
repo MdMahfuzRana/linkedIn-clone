@@ -13,7 +13,7 @@ function Sidebar__container() {
                 <div className="follower__suggest__header">
                     <div>Add to your feed</div>
                     <div><AcUnitIcon /></div>
-                </div>
+                </div> 
                 <div className="user__container__follower">
                     <div className="folower__div">
                         <div className="follower__avater">

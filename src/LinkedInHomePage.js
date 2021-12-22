@@ -14,9 +14,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import { useStateValue } from './StateProvider'
 import { actionTypes } from './reducer'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { selectUser } from './userSlice'
 
 function LinkedInHomePage() {
 
+    const globalUser = useSelector(selectUser)
     const [status, setstatus] = useState("")
     const [readyToChat, setreadyToChat] = useState(null)
     const [clickedMessageHeader, setclickedMessageHeader] = useState(null)
@@ -24,7 +26,7 @@ function LinkedInHomePage() {
     const [text, settext] = useState('')
     const [video, setvideo] = useState(null)
     const [file, setfile] = useState(null)
-    const [{permitedToOpenModal,profileRendering},dispatch] = useStateValue()
+    const [{permitedToOpenModal,authUser},dispatch] = useStateValue()
 
     const [posts, setposts] = useState(null)
     const [postsLenth, setpostsLenth] = useState(0)
@@ -37,7 +39,7 @@ function LinkedInHomePage() {
     useEffect(() => {
         fecthData();
         setpostsLenth(posts?.length)
-    }, [posts]);
+    }, []);
 
     useEffect(() => {
 
@@ -69,11 +71,10 @@ function LinkedInHomePage() {
         e.preventDefault()
         if(file||text){
             const postData = new FormData()
-            postData.append("userName","demoUser")
+            postData.append("userName",authUser?.data.email)
             postData.append("avatar","demoAvatar")
             postData.append("text",text)
             postData.append("file",file)
-
             Axios.post('/uplaodPost',postData)
         }
         closeModal()
@@ -82,12 +83,11 @@ function LinkedInHomePage() {
 const refresh = () => {
     window.location.reload();
 }
-
-
-
-
     return (
-        <div className="linkedInhome__main__container">
+    <>
+    {authUser?
+    (
+<div className="linkedInhome__main__container">
             <LinkedLindStickyHeader />
             <div className="homepage__main__container">
                 <div className="sideBar__left__container" >
@@ -178,14 +178,14 @@ const refresh = () => {
                             }
                             >
                         {posts?.map(post=>(
-                            <PostMain key={post._id} id={post._id} like={post.Like} userName={post.userName} avatar={post.avatar} file={post.file} time={"12:00"} />
+                            <PostMain key={post._id} id={post._id} status={post.status} like={post.Like} commnetBox={post.Comment} userName={post.userName} avatar={post.avatar} file={post.file} time={post.createdAt} />
                         ))
                             
                         }
                     </InfiniteScroll>
                     </div>
 
-{permitedToOpenModal?   
+{permitedToOpenModal?    
              (<div className="fixedand__unbisible__container" >
                 <div style={{width:"100%",height:"100%",display:"flex",justifyContent:"center",alignItems:"top"}}>
                     <div className="input__second__cotianer">
@@ -216,7 +216,7 @@ const refresh = () => {
                             }
                         </div>
                         {/* {video && <video width="100%" controls><source src={URL.createObjectURL(video)}/></video>} */}
-                    <div style={{height:"100px",width:"100%", display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px"}} className="submit__post__contiainer">
+                    <div className="submit__post__contiainer">
                         <div onClick={closeModal}  style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px",backgroundColor:"red" }}><p>Cencel</p></div>
                         <div onClick={submitPost} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px",backgroundColor:"blue"}}><p>Submit</p></div>
                     </div>
@@ -224,7 +224,7 @@ const refresh = () => {
                     </div>
                 </div>
             </div>)
-            :
+            : 
             (<></>)
             }
                 </div>
@@ -245,6 +245,14 @@ const refresh = () => {
                 </div>
             </div>
         </div>
+    ):(
+        <>
+            <Navigate to="/signUplandingPage" />
+        </>
+    )
+}
+    </>
+        
     )
 }
 

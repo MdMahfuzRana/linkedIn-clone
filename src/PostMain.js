@@ -12,7 +12,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import Axios from './Axios.js'
 import SendIcon from '@mui/icons-material/Send';
 
-function PostMain({id,like,file}) {
+function PostMain({id,like,status,userName,time,file,commnetBox}) {
     
     const [imageContainer, setimageContainer] = useState(null)
     const [videoContainer, setvideoContainer] = useState(null)
@@ -45,22 +45,31 @@ useEffect(() => {
     }
 }, [a])
 
-console.log(dbComment.length)
-if(dbComment.length>=100){
-    console.log("huge comment")
+
+const commentSubmit = () => {
+    if(comment){
+        Axios.post("/commentPost",{
+            id:id,
+            userProfileId:"authId",
+            displayName:userName,
+            userProfileAvatar:"avatar",
+            react:comment
+        })
+    }
+
+    setcomment("")
+
 }
-else{
-    console.log("little comment")
-}
+
     return (
         <div className="post__container">
             <div className="post__header">
                 <div className="post__header__Avatar__container">
                     <div><Avatar /></div>
                     <div style={{fontSize:".8rem"}} className="header__time__beside__avatar">
-                        <p>MD Mahfuz Rana</p>
+                        <p>{userName}</p>
                         <p>MERN stack developer</p>
-                        <p>just now</p>
+                        <p>{time}</p>
                     </div>
                 </div>
                 <div className="three__dots__container">
@@ -68,7 +77,7 @@ else{
                 </div>
             </div>
             <div className="post__desc">
-                <p>this is the post description container</p>
+                <p>{status}</p>
             </div>
             <div className="post__image__container">
 {videoContainer?   
@@ -90,7 +99,12 @@ else{
             <div className="post__foooter">
                 <div className="react__result__field">
                     <div>like {like?.length}</div>
-                    <div>1 Comment</div>
+                    <div onClick={()=>{if(displayNone){
+                        setdisplayNone(null)
+                    }else{
+                        setdisplayNone("notnull")
+                    }
+                    }}>{commnetBox.length} Comment</div>
                 </div>
                 <div className="border"></div>
                 <div className="react__event__field">
@@ -121,20 +135,23 @@ else{
                     <div className="react"><SendOutlinedIcon /><p>Send</p></div>
                 </div>
                 <div className='user__comment__section'>
-                    <div className={`comment__div ${displayNone}`}>
-                        <div ><Avatar /></div>
-                        <div style={{backgroundColor:"lightgray",paddingTop:"5px",marginLeft:"5px"}}>
-                            <a style={{fontWeight:"bold"}}>Md Mahfuz Rana</a>
-                            <a>MERN stack developer</a>
-                            <p>
-                            {dbComment}
-                            </p>
-                        </div>
-                    </div>
+{commnetBox.map(commentPower=>(
+        <div className={`comment__div ${displayNone}`}>
+        <div ><Avatar /></div>
+        <div style={{backgroundColor:"lightgray",paddingTop:"5px",marginLeft:"5px"}}>
+            <a style={{fontWeight:"bold"}}>Md Mahfuz Rana</a>
+            <a>MERN stack developer</a>
+            <p>
+            {commentPower.comment}
+            </p>
+        </div>
+      </div>
+))    
+                    }
 {comment?               (<div className={`comment__div ${displayNone}`}>
                         <div ><Avatar /></div>
                         <div style={{backgroundColor:"lightgray",paddingTop:"5px",marginLeft:"5px"}}>
-                            <a style={{fontWeight:"bold"}}>{}</a>
+                            <a style={{fontWeight:"bold"}}>{userName}</a>
                             <a>{}</a>
                             <p>
                              {comment}
@@ -145,7 +162,7 @@ else{
                 </div>
                 <div  className={`comment__write__section__container ${displayNone} `}>
                      <Avatar />
-                     <div style={{height:"35px",width:"70%",borderRadius:"20px",border:"1px solid lightgray"}}><input className='input' onChange={(e)=>{
+                     <div style={{height:"35px",width:"70%",borderRadius:"20px",border:"1px solid lightgray"}}><input className='input' value={comment} onChange={(e)=>{
                          setcomment(e.target.value)
                          if(comment){
                              setStyleEffects("powerStyle")
@@ -154,7 +171,7 @@ else{
                              setStyleEffects(null)
                          }
                          }} type="text" placeholder='write down your comment' /></div>
-                     <IconButton><SendIcon /></IconButton>
+                     <IconButton><SendIcon onClick={commentSubmit} /></IconButton>
                 </div>
             </div>
         </div>

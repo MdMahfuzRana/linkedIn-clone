@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AssignmentReturnedIcon from '@mui/icons-material/AssignmentReturned';
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import Sidebar__container from './Sidebar__container';
 
 function ProfilePage() {
     return (
@@ -49,9 +50,9 @@ function ProfilePage() {
                         <div style={{width:"100px",marginLeft:"10px",padding:"7px",display:"flex",justifyContent:"center",alignItems:"center",borderRadius:"20px" ,color:"black",border:"1px solid lightgray"}} ><p>Open To</p>
                         </div>
                     </div>
-                    <div style={{padding:"20px",height:"fit-content",width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                    <div className='slider__open__towork' style={{padding:"20px",height:"fit-content",width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
 
-                        <div style={{height:"80px",width:"49%",backgroundColor:"lightgray",borderRadius:"10px",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"15px",fontSize:".9rem" }}>
+                        <div style={{height:"80px",marginTop:"10px",width:"49%",backgroundColor:"lightgray",borderRadius:"10px",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"15px",fontSize:".9rem" }}>
                             <div>
                                 <p> Open to work</p>
                                 <p>
@@ -63,7 +64,7 @@ function ProfilePage() {
                                 <DriveFileRenameOutlineIcon />
                             </div>
                         </div>
-                        <div style={{height:"80px",width:"49%",backgroundColor:"lightgray",borderRadius:"10px",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"15px",fontSize:".9rem" }}>
+                        <div style={{height:"80px",marginTop:"10px",width:"49%",backgroundColor:"lightgray",borderRadius:"10px",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"15px",fontSize:".9rem" }}>
                             <div>
                                 <p> Open to work</p>
                                 <p>
@@ -74,7 +75,7 @@ function ProfilePage() {
                             <div style={{width:"35px",height:"100%",display:"flex",justifyContent:"center",alignItems:'top'}}>
                                 <DriveFileRenameOutlineIcon />
                             </div>
-                        </div>    
+                        </div>
 
                     </div>
                 </div> 
@@ -101,11 +102,11 @@ function ProfilePage() {
                             <div></div>
                         </div>
                     </div>
-                    <div className='intermidiate'>
-                        <AssignmentReturnedIcon />
+                    <div className='intermidiate' >
+                        <AssignmentReturnedIcon style={{zIndex:"2",backgroundColor:"white",padding:"10px",fontSize:"3rem",borderRadius:"100%",border:"1px solid lightgray"}} />
                     </div>
                     <div className='expertProfile'>
-                        <StarOutlineIcon />
+                        <StarOutlineIcon  style={{zIndex:"2",backgroundColor:"white",padding:"10px",fontSize:"3rem",borderRadius:"100%",border:"1px solid lightgray"}}/>
                     </div>
                     <div className='Submit__profile__and__skillss__container'>
                         <div className='Take__asiggnment__container'><img src="https://static-exp2.licdn.com/sc/h/5c9e0v28ilvp9ocpnqbfm7ll2" alt="" /></div>
@@ -180,9 +181,9 @@ function ProfilePage() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
             <div className='profile__right__container__main'>
-
+                <Sidebar__container />
             </div>
         </div>
     )

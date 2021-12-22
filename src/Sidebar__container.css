@@ -40,9 +40,9 @@
     min-height: 70px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 10px;
-    align-items: flex-start;
+    align-items: center;
     font-size: .8rem;
     /* background-color: red; */
 }
@@ -55,6 +55,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
+    margin-left: 10px;
 }
 .follower__button__contianer{
     height: 35px;
@@ -122,7 +123,7 @@
 
 
 .linked__sideimage__container{
-    min-height: 200px;
+    height: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -134,7 +135,7 @@
 }
 .image__container{
     height: 100%;
-    width: 97%;
+    width: 280px;
 
 }
 .image__container>img{

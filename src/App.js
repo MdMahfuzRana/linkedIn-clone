@@ -16,11 +16,37 @@ import  { Navigate  } from 'react-router-dom'
 import  Axios  from './Axios'
 import ProfilePage from './ProfilePage';
 import NotificationPage from './NotificationPage';
+import {useDispatch, useSelector} from 'react-redux'
+import { login, selectUser } from './userSlice';
+import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 
 function App() {
 
   const [user, setuser] = useState(null)
+  const userDispatch = useDispatch()
+  const globalUser = useSelector(selectUser)
+  const [{authUser},dispatch] = useStateValue()
 
+
+      if(localStorage.getItem('token')){
+        Axios.get('/authenticatduser',{
+            'headers': {
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+            }).then(playload=>{
+              // userDispatch(login(playload))
+              dispatch({
+                type:actionTypes.SET__USER__AUTH,
+                authUser:playload,
+              })
+        })
+    }
+    useEffect(() => {
+
+    }, [])
+
+    // console.log(authUser)
 
   return (
     <div className="app">
